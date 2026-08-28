@@ -3,7 +3,7 @@ import Police from "./Police";
 import ReglageRange from "./ReglageRange";
 
 import { useLangues } from "../contextes/LanguesContext";
-
+import { RxLetterCaseCapitalize } from "react-icons/rx";
 // Composant qui regroupe les réglages
 // liés à la typographie et à la lecture.
 export default function BoiteTypeText() {
@@ -12,7 +12,7 @@ export default function BoiteTypeText() {
   return (
     <section className="boite-type-text">
       <div className="titretypo">
-        <p aria-hidden="true">Aa</p>
+        <RxLetterCaseCapitalize />
 
         <h3>
           {t("settings.typography.label")}

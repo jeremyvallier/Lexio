@@ -11,17 +11,19 @@ export default function Preferences() {
   const { t } = useLangues();
 
   return (
-    <div className="page-preferences">
+    <div className="preferences">
       <Header />
 
       <main>
-        <h2>{t("nav.settings")}</h2>
+        <div className="container-preferences">
+          <h2>{t("nav.settings")}</h2>
 
-        <BoiteApparence />
+          <BoiteApparence />
 
-        <BoiteTypeText />
+          <BoiteTypeText />
 
-        <BoiteDonnees />
+          <BoiteDonnees />
+        </div>
       </main>
 
       <Navigation />

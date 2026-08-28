@@ -11,14 +11,14 @@ export default function Bibliotheque() {
   const { t } = useLangues();
 
   return (
-    <div>
+    <div className="containerbiblio">
       <Header />
 
       <h2>{t("nav.library")}</h2>
 
       <Formulaire />
 
-      <div className="liste-livres">
+      <div className="bibliotheque">
         {livresFiltres.map((livre) => (
           <Card
             key={livre.id}

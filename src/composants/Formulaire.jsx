@@ -1,6 +1,6 @@
 import { useLivres } from "../contextes/LivresContext";
 import { useLangues } from "../contextes/LanguesContext";
-
+import { CiSearch } from "react-icons/ci";
 export default function Formulaire() {
   const {
     recherche,
@@ -20,13 +20,6 @@ export default function Formulaire() {
       onSubmit={handleSubmit}
       role="search"
     >
-      <label
-        htmlFor="rechlivre"
-        className="sr-only"
-      >
-        {t("nav.search")}
-      </label>
-
       <input
         className="champrecherche"
         type="search"
@@ -44,7 +37,7 @@ export default function Formulaire() {
         className="btnform"
         aria-label={t("nav.search")}
       >
-        🔍
+        <CiSearch className="loupe"/>
       </button>
     </form>
   );

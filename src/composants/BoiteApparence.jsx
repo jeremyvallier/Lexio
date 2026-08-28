@@ -3,7 +3,7 @@ import LangueInterface from "./LangueInterface";
 import Theme from "./Theme";
 
 import { useLangues } from "../contextes/LanguesContext";
-
+import { MdOutlinePalette } from "react-icons/md";
 // Regroupe tous les paramètres liés à l'apparence
 export default function BoiteApparence() {
   const { t } = useLangues();
@@ -12,7 +12,7 @@ export default function BoiteApparence() {
     <section className="boite-apparence">
 
       <div className="titreappar">
-        <p aria-hidden="true">◐</p>
+        <MdOutlinePalette />
 
         <h3>
           {t("settings.appearance.label")}

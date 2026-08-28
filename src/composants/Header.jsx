@@ -1,4 +1,4 @@
-
+import { FaBookBookmark } from "react-icons/fa6";
 //ce composant contient les composants :
 //  ChoixLangue.jsx
 
@@ -8,12 +8,14 @@ import ChoixLangue from "./ChoixLangue";
 export default function Header(){
 
     return(
-        <div className="entete">
-            <div className="Lexio">
-                <p className="logoLexio">Logo</p>
-                <h1>LEKTIO</h1>
+        <div className="head">
+            <div className="entete">
+                <div className="lexio">
+                    <FaBookBookmark className="logoLexio"/>
+                    <h1>LEKTIO</h1>
+                </div>
+                <ChoixLangue/>
             </div>
-            <ChoixLangue/>
         </div>
     )
 }
