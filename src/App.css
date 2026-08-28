@@ -1,0 +1,1018 @@
+/* =========================
+   VARIABLES GENERALES
+========================= */
+
+:root {
+  --accent-color: #7c3aed;
+  --couleur-fond: #f5f4f2;
+  --couleur-bloc: #ffffff;
+  --couleur-texte: #1f1f1f;
+  --couleur-texte-secondaire: #777777;
+  --couleur-bordure: #dddddd;
+
+  --taille-texte: 16px;
+  --interligne: 1.6;
+  --espacement-lettres: 0px;
+  --largeur-contenu: 700px;
+  --police-lecture: Georgia, serif;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+
+/* =========================
+   APPLICATION
+========================= */
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 20px;
+
+  background-color: var(--couleur-fond);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.logo p {
+  margin: 0;
+}
+
+.logo-icon {
+  font-size: 20px;
+}
+
+
+/* =========================
+   TITRES
+========================= */
+
+h1,
+h2,
+h3 {
+  color: var(--couleur-texte);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+
+/* =========================
+   PAGE BIBLIOTHEQUE
+========================= */
+
+.bibliotheque {
+  width: 100%;
+  max-width: 950px;
+
+  margin: 0 auto;
+
+  padding: 20px 16px 100px 16px;
+}
+
+.bibliotheque > h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   FORMULAIRE DE RECHERCHE
+========================= */
+
+.formulaire {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.champrecherche {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 8px 0 0 8px;
+
+  background-color: var(--couleur-bloc);
+  color: var(--couleur-texte);
+
+  outline: none;
+}
+
+.btnform {
+  min-width: 48px;
+
+  padding: 12px;
+
+  border: 1px solid var(--accent-color);
+  border-radius: 0 8px 8px 0;
+
+  background-color: var(--accent-color);
+  color: white;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   LISTE DES LIVRES
+========================= */
+
+.cards {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 16px;
+
+  width: 100%;
+}
+
+
+/* =========================
+   CARD LIVRE
+========================= */
+
+.cardlivre {
+  overflow: hidden;
+
+  background-color: var(--couleur-bloc);
+
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.imgcard {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 220px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #eeeeee;
+}
+
+.imgcard img {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.imgcard p {
+  position: absolute;
+
+  top: 10px;
+  left: 10px;
+
+  margin: 0;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  background-color: var(--accent-color);
+  color: white;
+
+  font-size: 12px;
+}
+
+.author {
+  padding: 12px;
+}
+
+.author h2 {
+  margin: 0 0 6px 0;
+
+  font-size: 16px;
+}
+
+.author p {
+  margin: 0;
+
+  color: var(--couleur-texte-secondaire);
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   BARRE DE PROGRESSION
+========================= */
+
+.barre {
+  width: 100%;
+
+  padding: 8px 0;
+}
+
+.barre p {
+  margin: 0 0 6px 0;
+
+  font-size: 13px;
+}
+
+.barreprogression {
+  width: 100%;
+  height: 5px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background-color: #dddddd;
+}
+
+.barreprogression-remplissage {
+  height: 100%;
+
+  border-radius: 10px;
+
+  background-color: var(--accent-color);
+}
+
+.barrecard {
+  position: absolute;
+
+  right: 10px;
+  bottom: 8px;
+  left: 10px;
+
+  width: auto;
+}
+
+.barrecard p {
+  display: none;
+}
+
+
+/* =========================
+   NAVIGATION DU BAS
+========================= */
+
+.navigation {
+  position: fixed;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  padding: 14px;
+
+  border-top: 1px solid var(--couleur-bordure);
+
+  background-color: var(--couleur-bloc);
+}
+
+.navigation a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  color: var(--couleur-texte-secondaire);
+
+  text-decoration: none;
+
+  font-size: 12px;
+}
+
+.navigation a.active {
+  color: var(--accent-color);
+}
+
+
+/* =========================
+   PAGE LECTURE
+========================= */
+
+.lecture {
+  min-height: 100vh;
+
+  padding: 20px 20px 60px 20px;
+}
+
+
+/* =========================
+   NAV DE LECTURE
+========================= */
+
+.re {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  max-width: var(--largeur-contenu);
+
+  margin: 0 auto 20px auto;
+}
+
+.re a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 8px;
+
+  color: var(--couleur-texte);
+
+  text-decoration: none;
+
+  font-size: 24px;
+}
+
+.re h1 {
+  margin: 0;
+
+  font-size: 18px;
+}
+
+.re h2 {
+  margin: 2px 0 0 0;
+
+  color: var(--couleur-texte-secondaire);
+
+  font-size: 13px;
+  font-weight: normal;
+}
+
+
+/* =========================
+   TEXTE DU LIVRE
+========================= */
+
+.textelivre {
+  width: 100%;
+  max-width: var(--largeur-contenu);
+
+  margin: 30px auto;
+
+  font-family: var(--police-lecture);
+
+  font-size: var(--taille-texte);
+  line-height: var(--interligne);
+  letter-spacing: var(--espacement-lettres);
+}
+
+.textelivre h2 {
+  margin-bottom: 30px;
+
+  text-align: center;
+
+  font-family: var(--police-lecture);
+}
+
+.textelivre p {
+  margin-bottom: 20px;
+
+  text-align: justify;
+}
+
+
+/* =========================
+   BOITES DES PREFERENCES
+========================= */
+
+.boiteapparence,
+.boitetypetext,
+.boitereset {
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  padding: 20px;
+
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 10px;
+
+  background-color: var(--couleur-bloc);
+}
+
+
+/* =========================
+   TITRES DES BOITES
+========================= */
+
+.titreappar,
+.titretypo,
+.titrereset {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.titreappar p,
+.titretypo p,
+.titrereset p {
+  margin: 0;
+
+  color: var(--accent-color);
+}
+
+.titreappar h3,
+.titretypo h3,
+.titrereset h3 {
+  margin: 0;
+}
+
+
+/* =========================
+   THEME
+========================= */
+
+.btntheme {
+  display: flex;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.radiostheme {
+  flex: 1;
+}
+
+.radiostheme input {
+  display: none;
+}
+
+.radiostheme label {
+  display: block;
+
+  padding: 12px 8px;
+
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 8px;
+
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.radiostheme input:checked + label {
+  border: 2px solid var(--accent-color);
+}
+
+
+/* =========================
+   COULEURS D'ACCENTUATION
+========================= */
+
+.btncouleur {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.radioscouleur input {
+  display: none;
+}
+
+.swatch {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.swatch.violet {
+  background-color: #7c3aed;
+}
+
+.swatch.bleu {
+  background-color: #2563eb;
+}
+
+.swatch.bleu-vert {
+  background-color: #0f766e;
+}
+
+.swatch.vert {
+  background-color: #16a34a;
+}
+
+.swatch.orange {
+  background-color: #ea580c;
+}
+
+.swatch.rouge {
+  background-color: #dc2626;
+}
+
+.radioscouleur:has(input:checked) {
+  outline: 3px solid #222222;
+  outline-offset: 3px;
+}
+
+
+/* =========================
+   BOUTONS RADIO GENERIQUES
+========================= */
+
+.btnpolice {
+  display: flex;
+
+  gap: 8px;
+
+  margin-bottom: 20px;
+}
+
+.radios {
+  flex: 1;
+}
+
+.radios input {
+  display: none;
+}
+
+.radios label {
+  display: block;
+
+  padding: 10px 8px;
+
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 6px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+.radios input:checked + label {
+  background-color: var(--accent-color);
+  color: white;
+
+  border-color: var(--accent-color);
+}
+
+
+/* =========================
+   RANGES
+========================= */
+
+.ranges {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.range {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.range label {
+  font-size: 14px;
+}
+
+.range input {
+  width: 100%;
+
+  accent-color: var(--accent-color);
+}
+
+
+/* =========================
+   BOUTON RESET
+========================= */
+
+.btnreset {
+  width: 100%;
+
+  padding: 12px;
+
+  border: 1px solid #c9425d;
+  border-radius: 8px;
+
+  background-color: white;
+  color: #c9425d;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   VOLET PARAMETRES
+========================= */
+
+.volet-overlay {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: flex-end;
+
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.voletparametres {
+  width: 100%;
+  max-width: 400px;
+
+  height: 100%;
+
+  overflow-y: auto;
+
+  padding: 20px;
+
+  background-color: var(--couleur-fond);
+}
+
+
+/* =========================
+   PAGE PREFERENCES
+========================= */
+
+.preferences {
+  width: 100%;
+  max-width: 800px;
+
+  margin: 0 auto;
+
+  padding: 20px 16px 100px 16px;
+}
+
+.preferences > h2 {
+  margin-top: 0;
+}
+
+
+/* =========================
+   THEMES
+========================= */
+
+.light {
+  --couleur-fond: #f5f4f2;
+  --couleur-bloc: #ffffff;
+  --couleur-texte: #1f1f1f;
+  --couleur-texte-secondaire: #777777;
+  --couleur-bordure: #dddddd;
+}
+
+.sepia {
+  --couleur-fond: #f3ead7;
+  --couleur-bloc: #fff8e8;
+  --couleur-texte: #4a3b2a;
+  --couleur-texte-secondaire: #766553;
+  --couleur-bordure: #d8cdb9;
+}
+
+.dark {
+  --couleur-fond: #1f1f1f;
+  --couleur-bloc: #2b2b2b;
+  --couleur-texte: #f5f5f5;
+  --couleur-texte-secondaire: #b5b5b5;
+  --couleur-bordure: #444444;
+}
+
+
+/* =========================
+   COULEURS D'ACCENTUATION
+========================= */
+
+.accent-violet {
+  --couleur-principale: #5b2cc5;
+}
+
+.accent-bleu {
+  --couleur-principale: #1976d2;
+}
+
+.accent-bleu-vert {
+  --couleur-principale: #278b8b;
+}
+
+.accent-vert {
+  --couleur-principale: #3d8b63;
+}
+
+.accent-orange {
+  --couleur-principale: #e58b00;
+}
+
+.accent-rouge {
+  --couleur-principale: #c9425d;
+}
+
+
+/* =========================
+   POLICES DE LECTURE
+========================= */
+
+.police-serif {
+  --police-lecture: Georgia, "Times New Roman", serif;
+}
+
+.police-sans-serif {
+  --police-lecture: Arial, Helvetica, sans-serif;
+}
+
+.police-monospace {
+  --police-lecture: "Courier New", monospace;
+}
+
+.police-opendyslexic {
+  --police-lecture: "OpenDyslexic", Arial, sans-serif;
+}
+
+
+/* =========================
+   LARGEUR DU CONTENU
+========================= */
+
+.largeur-etroit {
+  --largeur-contenu: 500px;
+}
+
+.largeur-normal {
+  --largeur-contenu: 700px;
+}
+
+.largeur-large {
+  --largeur-contenu: 950px;
+}
+
+
+/* =========================
+   RESPONSIVE TABLETTE
+========================= */
+
+@media screen and (min-width: 600px) {
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bibliotheque {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+}
+
+
+/* =========================
+   RESPONSIVE ORDINATEUR
+========================= */
+
+@media screen and (min-width: 900px) {
+
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .preferences {
+    max-width: 700px;
+  }
+
+}
+
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media screen and (max-width: 450px) {
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+  }
+
+  .imgcard {
+    min-height: 180px;
+  }
+
+  .imgcard img {
+    height: 180px;
+  }
+
+  .author h2 {
+    font-size: 14px;
+  }
+
+  .author p {
+    font-size: 12px;
+  }
+
+  .btnpolice {
+    flex-wrap: wrap;
+  }
+
+  .radios {
+    min-width: 30%;
+  }
+
+  .btntheme {
+    flex-wrap: wrap;
+  }
+
+  .radiostheme {
+    min-width: 30%;
+  }
+
+  .btncouleur {
+    flex-wrap: wrap;
+  }
+
+}
+/* =========================
+   VOLET PARAMETRES FERME
+========================= */
+
+.volet-ferme {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 20px 20px 20px;
+  border: none;
+  border-radius: 20px 20px 0 0;
+  background-color: var(--couleur-bloc);
+  color: var(--couleur-texte);
+  cursor: pointer;
+  z-index: 50;
+}
+
+.volet-ferme p {
+  margin: 8px 0 0 0;
+  text-align: center;
+}
+
+
+/* Petite barre en haut du volet */
+
+.poignee-volet {
+  width: 40px;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #999;
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay-parametres {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+
+/* Fond sombre derrière le volet */
+
+.overlay-parametres::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================
+   VOLET OUVERT
+========================= */
+
+.volet-parametres {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+
+  max-height: 85vh;
+  overflow-y: auto;
+
+  padding: 20px;
+
+  border-radius: 20px 20px 0 0;
+
+  background-color: var(--couleur-bloc);
+  color: var(--couleur-texte);
+}
+
+
+/* =========================
+   BOUTON FERMER
+========================= */
+
+.btn-fermer-volet {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  border: none;
+  background-color: transparent;
+
+  color: var(--couleur-texte);
+
+  font-size: 20px;
+  cursor: pointer;
+}

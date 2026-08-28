@@ -1,4 +1,5 @@
 import BoiteTypeText from "./BoiteTypeText";
+
 import { useUI } from "../contextes/UIContext";
 
 export default function VoletParametres() {
@@ -8,55 +9,43 @@ export default function VoletParametres() {
     fermerVoletParametres,
   } = useUI();
 
-  return (
-    <>
-      {/* Partie réduite toujours visible en bas */}
-
-      <button
-        type="button"
+  // Si le volet est fermé :
+  // on affiche uniquement sa partie supérieure.
+  if (!voletParametresOuvert) {
+    return (
+      <div
         className="volet-ferme"
         onClick={ouvrirVoletParametres}
       >
         <div className="poignee-volet"></div>
 
         <p>Paramètres de lecture</p>
-      </button>
+      </div>
+    );
+  }
 
-      {/* Overlay + volet complet */}
+  // Si le volet est ouvert :
+  // l'overlay apparaît derrière.
+  return (
+    <div
+      className="volet-overlay"
+      onClick={fermerVoletParametres}
+    >
+      <div className="overlay-fond"></div>
 
-      {voletParametresOuvert && (
-        <div className="volet-overlay">
+      <aside
+        className="voletparametres"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <div
+          className="poignee-volet"
+          onClick={fermerVoletParametres}
+        ></div>
 
-          {/* Fond sombre cliquable */}
+        <h2>Paramètres de lecture</h2>
 
-          <div
-            className="overlay-fond"
-            onClick={fermerVoletParametres}
-          ></div>
-
-          {/* Volet */}
-
-          <aside className="voletparametres">
-
-            <button
-              type="button"
-              className="fermer-volet"
-              onClick={fermerVoletParametres}
-              aria-label="Fermer les paramètres"
-            >
-              ×
-            </button>
-
-            <div className="poignee-volet"></div>
-
-            <h2>Paramètres de lecture</h2>
-
-            <BoiteTypeText />
-
-          </aside>
-
-        </div>
-      )}
-    </>
+        <BoiteTypeText />
+      </aside>
+    </div>
   );
 }

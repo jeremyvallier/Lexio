@@ -1,12 +1,33 @@
+import { useLangues } from "../contextes/LanguesContext";
 
-//ce composant est une liste déroulante où l'on peut choisir la langue de l'application (FR/EN/ES)
-export default function ChoixLangue(){
+// Ce composant est une liste déroulante permettant
+// de choisir la langue de l'application.
 
-    return(
-        <select name="choixLangue" id="choix" className="choixLangue">
-            <option value="FR">FR</option>
-            <option value="EN">EN</option>
-            <option value="ES">ES</option>
-        </select>
-    )
+export default function ChoixLangue() {
+  const {
+    langue,
+    changerLangue,
+    locales,
+  } = useLangues();
+
+  return (
+    <select
+      name="choixLangue"
+      id="choix"
+      className="choixLangue"
+      value={langue}
+      onChange={(event) =>
+        changerLangue(event.target.value)
+      }
+    >
+      {locales.map((locale) => (
+        <option
+          key={locale}
+          value={locale}
+        >
+          {locale.toUpperCase()}
+        </option>
+      ))}
+    </select>
+  );
 }

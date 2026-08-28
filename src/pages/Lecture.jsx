@@ -4,14 +4,12 @@ import Texte from "../composants/Texte";
 import VoletParametres from "../composants/VoletParametres";
 
 import { useLivres } from "../contextes/LivresContext";
-import { useUI } from "../contextes/UIContext";
+
 
 export default function Lecture() {
   const { livreSelectionne } = useLivres();
 
-  const {
-    voletParametresOuvert,
-  } = useUI();
+ 
 
   // Sécurité : aucun livre sélectionné
   if (!livreSelectionne) {
@@ -31,9 +29,7 @@ export default function Lecture() {
         livre={livreSelectionne}
       />
 
-      {voletParametresOuvert && (
-        <VoletParametres />
-      )}
+      {<VoletParametres />}
 
     </div>
   );

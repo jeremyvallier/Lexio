@@ -83,7 +83,33 @@ export default function PreferencesProvider({ children }) {
 
   }, [preferences.accentColor]);
 
+    // Appliquer la police de lecture
+  useEffect(() => {
+    const polices = {
+      serif: "Georgia, 'Times New Roman', serif",
+      sansSerif: "Arial, Helvetica, sans-serif",
+      openDys: "OpenDyslexic, Arial, sans-serif",
+    };
 
+    document.documentElement.style.setProperty(
+      "--police-lecture",
+      polices[preferences.fontFamily]
+    );
+  }, [preferences.fontFamily]);
+
+  // Appliquer la largeur du contenu de lecture
+  useEffect(() => {
+    const largeurs = {
+      narrow: "600px",
+      normal: "800px",
+      wide: "1100px",
+    };
+
+    document.documentElement.style.setProperty(
+      "--largeur-contenu",
+      largeurs[preferences.contentWidth]
+    );
+  }, [preferences.contentWidth]);
   return (
     <PreferencesContext.Provider
       value={{
@@ -95,6 +121,7 @@ export default function PreferencesProvider({ children }) {
       {children}
     </PreferencesContext.Provider>
   );
+  
 }
 
 
