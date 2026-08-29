@@ -1,10 +1,10 @@
 import { FaBookBookmark } from "react-icons/fa6";
-//ce composant contient les composants :
-//  ChoixLangue.jsx
 
+// Composant permettant de sélectionner la langue de l'application.
 import ChoixLangue from "./ChoixLangue";
 
-// une div avec le titre et le logo de Lexio
+// Composant représentant l'en-tête commun de l'application.
+// Il contient le logo et le nom de l'application, ainsi que le sélecteur de langue.
 export default function Header(){
 
     return(
@@ -14,6 +14,9 @@ export default function Header(){
                     <FaBookBookmark className="logoLexio"/>
                     <h1>LEKTIO</h1>
                 </div>
+                   {/* Le sélecteur de langue est placé dans le header
+                    afin d'être accessible depuis les différentes pages
+                    qui utilisent ce composant.*/}
                 <ChoixLangue/>
             </div>
         </div>

@@ -1,17 +1,22 @@
 import { usePreferences } from "../contextes/PreferencesContext";
 import { useLangues } from "../contextes/LanguesContext";
 
+// Composant permettant de choisir la couleur d'accentuation utilisée dans l'interface de l'application.
 export default function CouleurAccentuation() {
+  // Récupère les préférences actuelles et la fonction permettant de modifier une préférence.
   const { preferences, modifierPreference } = usePreferences();
+  // Récupère la fonction de traduction.
   const { t } = useLangues();
 
+  // Fonction appelée lorsqu'une couleur est sélectionnée.
   function changerCouleur(event) {
+    // event.target.value correspond à la valeur du bouton radio sélectionné
     modifierPreference("accentColor", event.target.value);
   }
 
   return (
     <div className="couleur-accentuation">
-
+      {/* Libellé du réglage. */}
       <p>
         {t("settings.appearance.accentColor")}
       </p>
@@ -24,6 +29,7 @@ export default function CouleurAccentuation() {
             id="violet"
             name="accentColor"
             value="violet"
+            // Le bouton est sélectionné si la couleur actuelle enregistrée dans les préférences est "violet".
             checked={preferences.accentColor === "violet"}
             onChange={changerCouleur}
             aria-label="Violet"

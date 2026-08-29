@@ -27,7 +27,7 @@ export default function UIProvider({ children }) {
     <UIContext.Provider
       // États de l'interface.
       // Fonctions permettant de modifier ces états.
-      value={{ pageActive, voletParametresOuvert, changerPage, ouvrirVoletParametres, fermerVoletParametres, basculerVoletParametres, }}>
+      value={{ voletParametresOuvert, ouvrirVoletParametres, fermerVoletParametres }}>
       {children}
     </UIContext.Provider>
   );

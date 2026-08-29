@@ -30,6 +30,7 @@
         "fontSize":       { "fr": "Taille du texte",       "en": "Text size",           "es": "Tamaño del texto"     },
         "lineHeight":     { "fr": "Interlignage",          "en": "Line height",         "es": "Interlineado"         },
         "letterSpacing":  { "fr": "Espacement des caractères", "en": "Letter spacing",  "es": "Espaciado de letras"  },
+        "wordSpacing":    { "fr": "Espacement des mots", "en": "word spacing",  "es": "espaciado entre palabras"  },
         "contentWidth": {
           "label":        { "fr": "Largeur du contenu",    "en": "Content width",       "es": "Ancho del contenido"  },
           "narrow":       { "fr": "Étroit",                "en": "Narrow",              "es": "Estrecho"             },

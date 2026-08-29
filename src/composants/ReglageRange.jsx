@@ -1,13 +1,20 @@
 import { usePreferences } from "../contextes/PreferencesContext";
 import { useLangues } from "../contextes/LanguesContext";
 
+// Composant qui regroupe les réglages numériques liés à l'affichage du texte.
 export default function ReglageRange() {
+  // Récupère les préférences actuelles ainsi que la fonction permettant de les modifier.
   const { preferences, modifierPreference } = usePreferences();
+  // Récupère la fonction de traduction.
   const { t } = useLangues();
 
+  // Fonction commune utilisée par tous les curseurs.
   function changerReglage(event) {
+    // "name" identifie le réglage à modifier et "value" contient la nouvelle valeur du curseur.
     const { name, value } = event.target;
 
+    // Les valeurs récupérées depuis un input sont des chaînes de caractères.
+    // Number() permet de convertir la valeur en nombre avant de l'enregistrer.
     modifierPreference(name, Number(value));
   }
 
@@ -31,7 +38,7 @@ export default function ReglageRange() {
             value={preferences.fontSize}
             onChange={changerReglage}
           />
-
+          {/* Affiche la valeur actuelle à droite du curseur. */}
           <span>{preferences.fontSize}px</span>
         </div>
       </div>
@@ -86,7 +93,7 @@ export default function ReglageRange() {
       {/* Espacement des mots */}
       <div className="range">
         <label htmlFor="wordSpacing">
-          Espacement des mots
+          {t("settings.typography.wordSpacing")}
         </label>
 
         <div className="range-valeur">

@@ -9,28 +9,24 @@ import { useLivres } from "../contextes/LivresContext";
 export default function Lecture() {
   const { livreSelectionne } = useLivres();
 
- 
-
-  // Sécurité : aucun livre sélectionné
-  if (!livreSelectionne) {
-    return <p>Aucun livre sélectionné.</p>;
-  }
-
   return (
     <div className="page-lecture">
 
       <Nav />
 
-      <BarreProgression
-        progression={livreSelectionne.readingProgress}
-      />
-
-      <Texte
-        livre={livreSelectionne}
-      />
-
-      {<VoletParametres />}
-
+      {!livreSelectionne ? (
+        <p>Aucun livre sélectionné</p>
+      ) : (
+          <>
+            <BarreProgression
+              progression={livreSelectionne.readingProgress}
+            />
+            <Texte
+              livre={livreSelectionne}
+            />
+            {<VoletParametres />}
+          </>
+        )}
     </div>
   );
 }
