@@ -4,9 +4,13 @@ import { NavLink } from "react-router-dom";
 import { IoBookOutline } from "react-icons/io5";
 import { GoGear } from "react-icons/go";
 import { PiShoppingCartLight } from "react-icons/pi";
+import { useLangues } from "../contextes/LanguesContext";
 // Composant qui affiche la navigation principale de l'application.
 // Il est utilisé pour accéder à la bibliothèque et aux paramètres.
 export default function Navigation() {
+  // Récupère la fonction de traduction pour afficher
+  // le texte dans la langue sélectionnée par l'utilisateur.
+  const { t } = useLangues();
   return (
     <nav className="navigation">
       {/* Élément "Librairie".
@@ -14,7 +18,7 @@ export default function Navigation() {
         il s'agit d'un faux bouton qui représente la boutique/librairie.*/}
       <div className="caddie">
         <PiShoppingCartLight />
-        <p>Librairie</p>
+        <p>{t("nav.bookstore")}</p>
       </div>
 
       {/* NavLink permet de naviguer vers la page Bibliothèque.
@@ -22,7 +26,7 @@ export default function Navigation() {
         change la page affichée sans recharger toute l'application.*/}
       <NavLink to="/">
         <IoBookOutline />
-        Ma bibliothèque
+        <p>{t("nav.library")}</p>
       </NavLink>
 
       {/* Navigation vers la page des paramètres.
@@ -30,7 +34,7 @@ export default function Navigation() {
         automatiquement l'état du lien actif.*/}
       <NavLink to="/Preferences">
         <GoGear />
-        Paramètres
+        <p>{t("nav.settings")}</p>
       </NavLink>
     </nav>
   );

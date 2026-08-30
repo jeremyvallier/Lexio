@@ -1,6 +1,5 @@
 import { useLangues } from "../contextes/LanguesContext";
 
-
 // Composant permettant à l'utilisateur de choisir la langue de l'application.
 export default function ChoixLangue() {
   // Récupère les données et fonctions nécessaires depuis le LanguesContext.
@@ -25,7 +24,7 @@ export default function ChoixLangue() {
         changerLangue(event.target.value)
       }
     >
-       {/* Création automatique des options à partir
+      {/* Création automatique des options à partir
         de la liste des langues disponibles.
         Le composant n'a donc pas besoin d'écrire
         manuellement une option pour chaque langue.

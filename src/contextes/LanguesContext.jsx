@@ -18,7 +18,6 @@ export default function LanguesProvider({ children }) {
   // La langue actuelle vient directement des préférences de l'utilisateur
   const langue = preferences.language;
 
-
   // Fonction permettant de modifier la langue.
   // La nouvelle valeur est enregistrée dans les préférences,
   // ce qui met automatiquement à jour tous les composants
@@ -26,7 +25,6 @@ export default function LanguesProvider({ children }) {
   function changerLangue(nouvelleLangue) {
     modifierPreference("language", nouvelleLangue);
   }
-
 
   // Fonction de traduction.
   // Elle reçoit un chemin sous forme de chaîne de caractères.

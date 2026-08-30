@@ -43,7 +43,6 @@ export default function ReglageRange() {
         </div>
       </div>
 
-
       {/* Interlignage */}
       <div className="range">
         <label htmlFor="lineHeight">
@@ -66,7 +65,6 @@ export default function ReglageRange() {
         </div>
       </div>
 
-
       {/* Espacement des caractères */}
       <div className="range">
         <label htmlFor="letterSpacing">
@@ -88,7 +86,6 @@ export default function ReglageRange() {
           <span>{preferences.letterSpacing}px</span>
         </div>
       </div>
-
 
       {/* Espacement des mots */}
       <div className="range">

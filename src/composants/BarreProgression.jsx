@@ -6,7 +6,7 @@ export default function BarreProgression({
   // Cela permet notamment d'avoir un style différent selon l'utilisation
   // de la barre (par exemple dans card).
   className = "",
-}) {
+  }) {
 
   // On s'assure que la progression reste toujours comprise entre 0 et 100.
   // Math.max(0, progression) empêche une valeur négative.

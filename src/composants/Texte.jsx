@@ -9,10 +9,10 @@ export default function Texte({ livre }) {
   const { preferences } = usePreferences();
   // Associe chaque valeur enregistrée pour la police à la police CSS correspondante.
   const polices = {
-  serif: "Georgia, serif",
-  sansSerif: "Arial, sans-serif",
-  openDys: "OpenDyslexic, sans-serif",
-};
+    serif: "Georgia, serif",
+    sansSerif: "Arial, sans-serif",
+    openDys: "OpenDyslexic, sans-serif",
+  };
 
   // Utilise le livre reçu en props,
   // sinon récupère le livre sélectionné dans le Context.

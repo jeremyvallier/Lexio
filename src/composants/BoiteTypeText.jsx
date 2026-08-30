@@ -15,7 +15,6 @@ export default function BoiteTypeText() {
       {/* Titre de la section avec son icône. */}
       <div className="titretypo">
         <RxLetterCaseCapitalize />
-
         <h3>
           {t("settings.typography.label")}
         </h3>

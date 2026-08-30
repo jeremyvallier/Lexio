@@ -16,7 +16,7 @@ export default function Lecture() {
 
       {!livreSelectionne ? (
         <p>Aucun livre sélectionné</p>
-      ) : (
+          ) : (
           <>
             <BarreProgression
               progression={livreSelectionne.readingProgress}

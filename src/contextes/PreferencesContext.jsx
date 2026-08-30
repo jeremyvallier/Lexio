@@ -26,7 +26,7 @@ const preferencesParDefaut = {
 /* Le Provider englobe l'application dans main.jsx et rend les préférences
   accessibles à tous les composants enfants grâce au PreferencesContext.*/
 export default function PreferencesProvider({ children }) {
-/*
+  /*
     État contenant toutes les préférences de l'utilisateur.
     La fonction passée à useState est exécutée uniquement lors de
     l'initialisation du composant.

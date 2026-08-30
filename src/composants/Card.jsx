@@ -49,27 +49,29 @@ export default function Card({ livre }) {
           alt={`Couverture de ${livre.title}`}
         />
 
-         {/* Affiche "En cours" uniquement si le livre a commencé
+        {/* Affiche "En cours" uniquement si le livre a commencé
           mais n'est pas encore terminé.
           > 0  : le livre a commencé
           < 100 : le livre n'est pas terminé*/}
         {livre.readingProgress > 0 &&
           livre.readingProgress < 100 && (
-            <p>En cours</p>
-          )}
-
-         
-         {/* Affiche la barre de progression du livre.
+          <p>En cours</p>
+        )}
+          
+           
+        {/* Affiche la barre de progression du livre.
           La valeur readingProgress vient des données du livre.
           className permet ici d'ajouter "barrecard" à la classe
           du composant BarreProgression afin de lui appliquer
           un style spécifique dans une carte. */}
+        <span className="barrecardprct">{livre.readingProgress} %</span>
         <BarreProgression
           className="barrecard"
           progression={livre.readingProgress}
         />
+          
       </div>
-
+          
       <div className="author">
         <h2>{livre.title}</h2>
 
